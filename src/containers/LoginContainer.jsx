@@ -1,18 +1,22 @@
 import {withFormik} from 'formik';
 import {Login} from './../components';
+import {connect} from 'react-redux';
+import {loginThunkCreator} from './../redux/authReducer'
 
 const LoginContainer = withFormik({
     mapPropsToValues: () => ({email: '', password: ''}),
     validate: values => {
 
     },
-    handleSubmit: (values) => {
-        setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-        }, 1000);
+    handleSubmit: (values, {props}) => {
+        props.loginTC(values.email, values.password)
     },
 
     displayName: 'Login', // helps with React DevTools
 })(Login);
 
-export default LoginContainer;
+const mapStateToProps = (state) => ({
+    isAuth: state.auth.isAuth
+});
+
+export default connect(mapStateToProps, {loginTC: loginThunkCreator})(LoginContainer);
