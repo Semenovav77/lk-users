@@ -1,10 +1,15 @@
 import React from 'react';
 
-const User = ({user}) => {
+import './User.scss';
+import { Button } from 'antd';
+
+const User = ({user, delUsers}) => {
     return (
-        <div>
-            <div>{user.fullname}</div>
-            <div>{user.email} </div>
+        <div className='user'>
+            <div className='user__fullname'>{user.fullname}</div>
+            <div className='user__email'>{user.email} </div>
+            <div className='user__btn-redact'><Button>Редактировать</Button></div>
+            <div className='user__btn-delete'><Button onClick={() => delUsers(user.id)}>Удалить</Button></div>
         </div>
     );
 };

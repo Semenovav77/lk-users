@@ -1,0 +1,18 @@
+.input-contact {
+    display: flex;
+    margin-top: 25px;
+    &__name {
+        width: 200px;
+        margin-left: 20px;
+    }
+    &__email {
+        width: 200px;
+        margin-left: 20px;
+    }
+    &__btn {
+        margin-left: 40px;
+        button.ant-btn.ant-btn-primary {
+            width: 128px;
+        }
+    }
+}

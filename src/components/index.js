@@ -1,3 +1,4 @@
 export {default as Login} from './Login/Login'
 export {default as Users} from './Users/Users'
 export {default as User} from './User/User'
+export {default as InputContact} from './InputContact/InputContact'

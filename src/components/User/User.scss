@@ -1,0 +1,27 @@
+.user {
+  display: flex;
+  align-items: center;
+  margin: 20px 20px 0 40px;
+  &__fullname {
+    min-width: 200px;
+    font-weight: bolder;
+  }
+  &__email {
+    margin-left: 20px;
+    min-width: 200px;
+  }
+  &__btn-redact {
+    margin-left: 20px;
+    .ant-btn {
+      border-color: #14bb48;
+      color: #14bb48;
+    }
+  }
+  &__btn-delete {
+    margin-left: 20px;
+    .ant-btn {
+      border-color: #dc1e1e;
+      color: #dc1e1e;
+    }
+  }
+}
