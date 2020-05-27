@@ -3,7 +3,6 @@ import {Button as BaseButton, Form, Input as BaseInput} from 'antd';
 import Icon from '@ant-design/icons';
 
 const Login = (props) => {
-    debugger
     const {
         touched,
         errors,

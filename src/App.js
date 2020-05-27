@@ -3,14 +3,14 @@ import {Switch, Route} from 'react-router-dom';
 
 import './App.css';
 import {LoginContainer} from './containers';
-import {Users} from './components';
+import {UsersContainer} from './containers';
 
 function App() {
     return (
         <>
             <Switch>
                 <Route exact path='/login' render={() => <LoginContainer/>}/>
-                <Route exact path='/users' render={() => <Users/>}/>
+                <Route exact path='/users' render={() => <UsersContainer/>}/>
                 <Route path='*' render={() => <div>404 NOT FOUND</div>}/>
             </Switch>
         </>

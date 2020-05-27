@@ -1,9 +1,12 @@
 import React from 'react';
 
-const Users = () => {
+import {User} from './../../components'
+
+const Users = ({users, isAuth, fullname}) => {
+    debugger
     return (
         <>
-            <div>Users</div>
+            {users.map((user) => <User user={user}/>)}
         </>
     );
 };

@@ -7,7 +7,6 @@ const LoginContainer = withFormik({
 
     },
     handleSubmit: (values) => {
-        debugger
         setTimeout(() => {
             alert(JSON.stringify(values, null, 2));
         }, 1000);
