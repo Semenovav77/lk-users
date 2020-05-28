@@ -1,4 +1,16 @@
-.input-add {
-  margin-left: 40px;
-  margin-top: 20px;
+.users-wrapper {
+  margin: 40px;
+  width: min-content;
+  .top {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .search-bar {
+    width: 300px;
+    margin-top: 20px;
+  }
+  .input-add {
+    margin-top: 20px;
+  }
+
 }

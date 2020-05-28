@@ -1,17 +1,26 @@
 .user {
   display: flex;
   align-items: center;
-  margin: 20px 20px 0 40px;
+  margin: 20px 20px 0 0;
   &__fullname {
-    min-width: 200px;
+    width: 200px;
     font-weight: bolder;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
   }
   &__email {
     margin-left: 20px;
-    min-width: 200px;
+    width: 200px;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
   }
   &__btn-edit {
-    margin-left: 20px;
+    margin-left: 40px;
+    width: 128px;
     .ant-btn {
       border-color: #14bb48;
       color: #14bb48;

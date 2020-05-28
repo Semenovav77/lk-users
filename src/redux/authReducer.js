@@ -5,7 +5,7 @@ const SET_AUTH = 'auth/SET_AUTH';
 const TOOGLE_ISAUTH = 'auth/TOOGLE_ISAUTH';
 
 let initialState = {
-    isAuth: true,
+    isAuth: false
 };
 
 const authReducer = (state = initialState, action) => {

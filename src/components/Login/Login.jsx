@@ -1,7 +1,7 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
 import {Button as BaseButton, Form, Input as BaseInput} from 'antd';
-import Icon from '@ant-design/icons';
+import {MailOutlined, LockOutlined} from '@ant-design/icons';
 
 import './Login.scss'
 
@@ -25,21 +25,25 @@ const Login = (props) => {
                 <p>Пожалуйcта, ввойдите в свой личный кабинет </p>
             </div>
             <Form onFinish={handleSubmit} className='form-input'>
-                    <Form.Item
+                    <Form.Item validateStatus={!touched.email ? '' : errors.email && touched.email ? 'error':'success'}
+                               hasFeedback
+                               help={touched.email && errors.email }
                     >
                         <BaseInput
                             id='email'
-                            prefix={<Icon type="mail" style={{color: 'rgba(0,0,0,.25)'}}/>}
+                            prefix={<MailOutlined style={{color: 'rgba(0,0,0,.25)'}}/>}
                             placeholder="E-Mail"
                             onChange={handleChange}
                             onBlur={handleBlur}
                         />
                     </Form.Item>
-                    <Form.Item
+                    <Form.Item validateStatus={ !touched.password ? '' : errors.password && touched.password ? 'error':'success'}
+                               hasFeedback
+                               help={touched.password && errors.password }
                     >
                         <BaseInput
                             id='password'
-                            prefix={<Icon type="lock" style={{color: 'rgba(0,0,0,.25)'}}/>}
+                            prefix={<LockOutlined style={{color: 'rgba(0,0,0,.25)'}}/>}
                             type="password"
                             placeholder="Введите пароль"
                             onChange={handleChange}
