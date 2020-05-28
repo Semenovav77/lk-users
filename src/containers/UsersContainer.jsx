@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import {Users} from './../components';
-import {getUsers, delUsers, addUser} from './../redux/usersReducer'
+import {getUsers, delUsers, addUser, editUser} from './../redux/usersReducer'
 
 const mapStateToProps = (state) => ({
     users: state.users,
@@ -10,4 +10,4 @@ const mapStateToProps = (state) => ({
     fullname: state.auth.fullname
 });
 
-export default connect(mapStateToProps,{getUsers, delUsers, addUser})(Users);
+export default connect(mapStateToProps,{getUsers, delUsers, addUser, editUser})(Users);

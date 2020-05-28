@@ -3,6 +3,7 @@ import {API} from './../api/api';
 const SET_USERS = 'users/SET-USERS';
 const DEL_USER = 'users/DEL_USER';
 const ADD_USER = 'users/ADD_USER';
+const EDIT_USER = 'users/EDIT_USER';
 
 let initialState = [
     /* {
@@ -40,6 +41,18 @@ const usersReducer = (state = initialState, action) => {
                     email: action.payload.email
                 }
             ];
+        case EDIT_USER:
+            return state.map((item) => {
+                if (item.id === action.payload.id) {
+                    return {
+                        ...item,
+                        fullname: action.payload.name,
+                        email: action.payload.email
+                    }
+                }
+                else
+                    return item;
+            });
         default:
             return state;
     }
@@ -67,6 +80,17 @@ export const addUser = (name, email) => {
         payload: {
             name,
             email
+        }
+    }
+};
+
+export const editUser = (name, email, id) => {
+    return {
+        type: EDIT_USER,
+        payload: {
+            name,
+            email,
+            id
         }
     }
 };
