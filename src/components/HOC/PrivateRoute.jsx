@@ -1,19 +1,20 @@
 import React from 'react';
-import {Route, Redirect} from 'react-router-dom';
-import {connect} from 'react-redux';
+import { Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-const RedirectComponent = ({component: Component, isAuth, ...rest}) => {
-    return  (
-        <Route {...rest} render={() => {
-            return (
-                (isAuth) ? <Component {...rest}/> : <Redirect to='/login'/>
-            )}
-        } />
-    );
+const RedirectComponent = ({ component: Component, isAuth, ...rest }) => {
+  return (
+    <Route
+      {...rest}
+      render={() => {
+        return isAuth ? <Component {...rest} /> : <Redirect to="/login" />;
+      }}
+    />
+  );
 };
 
 let mapStateToPropsForRedirect = (state) => ({
-    isAuth: state.auth.isAuth
+  isAuth: state.auth.isAuth,
 });
 
 const PrivateRoute = connect(mapStateToPropsForRedirect)(RedirectComponent);
